@@ -2,7 +2,7 @@
 
 O HXPHP é um mini-framework PHP.
 
-![QR CODE](https://www.hxphp.com.br/qr.png "QR CODE")
+![QR CODE](http://www.hxphp.com.br/qr.png "QR CODE")
 
 ### Qual é a diferença do HXPHP em comparação aos demais frameworks PHP?
 --------------------------------------------------------------------
