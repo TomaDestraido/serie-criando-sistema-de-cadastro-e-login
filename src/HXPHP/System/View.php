@@ -45,7 +45,7 @@ class View
 		 */
 		$this->configs = $configs;
 		$this->request  = new Http\Request($configs->baseURI);
-		
+
 		/**
 		 * Tratamento das variáveis
 		 */

@@ -11,6 +11,12 @@ class Auth
 {
 
 	/**
+	 * Injeção do Request
+	 * @var object
+	 */
+	public $request;
+
+	/**
 	 * Injeção do Response
 	 * @var object
 	 */
@@ -38,6 +44,7 @@ class Auth
 	public function __construct($url_redirect_after_login, $url_redirect_after_logout, $redirect = false)
 	{
 		//Instância dos objetos injetados
+		$this->request = new Http\Request;
 		$this->response = new Http\Response;
 		$this->storage  = new Storage\Session;
 		$this->messages = new Messages('auth');
@@ -53,14 +60,18 @@ class Auth
 
 	/**
 	 * Autentica o usuário
-	 * @param  integet $user_id  ID do usuário
+	 * @param  integer $user_id  ID do usuário
 	 * @param  string $username  Nome de usuário
 	 */
 	public function login($user_id, $username)
 	{
-		$this->storage->set('user_id', preg_replace("/[^0-9]+/", "", $user_id));
-		$this->storage->set('username', preg_replace("/[^a-zA-Z0-9_\-]+/", "", $username));
-		$this->storage->set('login_string', hash('sha512', $username.$_SERVER['REMOTE_ADDR'].$_SERVER['HTTP_USER_AGENT']));
+		$user_id = intval(preg_replace("/[^0-9]+/", "", $user_id));
+		$username = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $username);
+		$login_string = hash('sha512', $username . $this->request->server('REMOTE_ADDR') . $this->request->server('HTTP_USER_AGENT'));
+
+		$this->storage->set('user_id', $user_id);
+		$this->storage->set('username', $username);
+		$this->storage->set('login_string', $login_string);
 
 		if ($this->redirect === true)
 			return $this->response->redirectTo($this->url_redirect_after_login);
@@ -88,11 +99,13 @@ class Auth
 	 */
 	public function redirectCheck($redirect = false)
 	{
-		if ($redirect && $this->login_check())
+		if ($redirect && $this->login_check()) {
 			$this->response->redirectTo($this->url_redirect_after_login);
-		elseif (!$this->login_check())
+		}
+		elseif (!$this->login_check()) {
 			if (!$redirect)
 				$this->logout();
+		}
 	}
 
 	/**
@@ -101,9 +114,15 @@ class Auth
 	 */
 	public function login_check()
 	{
-		if ($this->storage->exists('user_id') && $this->storage->exists('username') && $this->storage->exists('login_string'))
-			return((hash('sha512', $this->storage->get('username').$_SERVER['REMOTE_ADDR'].$_SERVER['HTTP_USER_AGENT']) == $this->storage->get('login_string')) ? true : false);
-	}	
+		if ( $this->storage->exists('user_id') &&
+			 $this->storage->exists('username') &&
+			 $this->storage->exists('login_string') ) {
+
+			$login_string = hash('sha512', $this->storage->get('username') . $this->request->server('REMOTE_ADDR') . $this->request->server('HTTP_USER_AGENT'));
+
+			return ($login_string == $this->storage->get('login_string') ? true : false);
+		}
+	}
 
 	/**
 	 * Retorna a ID do usuário autenticado
