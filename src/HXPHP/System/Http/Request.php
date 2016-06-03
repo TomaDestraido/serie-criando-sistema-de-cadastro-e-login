@@ -11,22 +11,23 @@ class Request
 	 * Atributos
 	 * @var null
 	 */
-	public  $controller;
-	public  $action;
-	public  $params = array();
+	public  $subfolder = '';
+	public  $controller = 'IndexController';
+	public  $action = 'indexAction';
+	public  $params = [];
 
 	/**
 	 * Filtros customizados de tratamento
 	 * @var array
 	 */
-	public $custom_filters = array();
+	public $custom_filters = [];
 
 	/**
 	 * Método construtor
 	 */
-	public function __construct($baseURI = '')
+	public function __construct($baseURI = '', $controller_directory = '')
 	{
-		$this->initialize($baseURI);
+		$this->initialize($baseURI, $controller_directory);
 		return $this;
 	}
 
@@ -34,9 +35,9 @@ class Request
 	 * Define os parâmetros do mecanismo MVC
 	 * @return object Retorna o objeto com as propriedades definidas
 	 */
-	public function initialize($baseURI)
+	public function initialize($baseURI, $controller_directory)
 	{
-		if ( ! empty($baseURI)) {
+		if ( ! empty($baseURI) && ! empty($controller_directory)) {
 			$explode = array_values(array_filter(explode('/', $_SERVER['REQUEST_URI'])));
 
 			if (isset($explode[0]) && $explode[0] == str_replace('/', '', $baseURI)) {
@@ -44,25 +45,33 @@ class Request
 				$explode = array_values($explode);
 			}
 
-			if (count($explode) == 0) {
-				$this->controller = 'IndexController';
-				$this->action = 'indexAction';
-
+			if (count($explode) == 0)
 				return $this;
-			}
+			
+			if (file_exists($controller_directory . $explode[0])) {
+				$this->subfolder = $explode[0] . DS;
+				
+				if (isset($explode[1]))
+					$this->controller = Tools::filteredName($explode[1]).'Controller';
 
-			if (count($explode) == 1) {
+				if (isset($explode[2])) {
+					$this->action = lcfirst(Tools::filteredName($explode[2])).'Action';
+
+					unset($explode[2]);
+				}
+			}
+			elseif (count($explode) == 1) {
 				$this->controller = Tools::filteredName($explode[0]).'Controller';
-				$this->action = 'indexAction';
 
 				return $this;
 			}
-
-			$this->controller = Tools::filteredName($explode[0]).'Controller';
-			$this->action = lcfirst(Tools::filteredName($explode[1])).'Action';
+			else {
+				$this->controller = Tools::filteredName($explode[0]).'Controller';
+				$this->action = lcfirst(Tools::filteredName($explode[1])).'Action';
+			}
 
 			unset($explode[0], $explode[1]);
-
+			
 			$this->params = array_values($explode);
 		}
 	}
@@ -71,7 +80,7 @@ class Request
 	 * Define filtros/flags customizados (http://php.net/manual/en/filter.filters.sanitize.php)
 	 * @param array $custom_filters Array com nome do campo e seu respectivo filtro
 	 */
-	public function setCustomFilters(array $custom_filters = array())
+	public function setCustomFilters(array $custom_filters = [])
 	{
 		return $this->custom_filters = $custom_filters;
 	}
@@ -83,15 +92,15 @@ class Request
 	 * @param  array $custom_filters  Filtros customizados para determinados campos
 	 * @return array                  Constate tratada
 	 */
-	public function filter(array $request, $data, array $custom_filters = array())
+	public function filter(array $request, $data, array $custom_filters = [])
 	{
-		$filters = array();
+		$filters = [];
 
-		foreach ($request as $key => $value) {
-			if ( ! array_key_exists($key, $custom_filters)) {
+		foreach ($request as $key => $value)
+			if (!array_key_exists($key, $custom_filters))
 				$filters[$key] = constant('FILTER_SANITIZE_STRING');
-			}
-		}
+
+
 
 		if (is_array($custom_filters) && is_array($custom_filters))
 			$filters = array_merge($filters,$custom_filters);
@@ -108,13 +117,13 @@ class Request
 	{
 		$get = $this->filter($_GET, INPUT_GET, $this->custom_filters);
 
-		if ( ! $name) {
+		if (!$name)
 			return $get;
-		}
 
-		if ( ! isset($get[$name])) {
+
+		if (!($get[$name]))
 			return null;
-		}
+
 
 		return $get[$name];
 	}
@@ -128,13 +137,12 @@ class Request
 	{
 		$post = $this->filter($_POST, INPUT_POST, $this->custom_filters);
 
-		if ( ! $name) {
+		if (!$name)
 			return $post;
-		}
 
-		if ( ! isset($post[$name])) {
+		if (!($post[$name]))
 			return null;
-		}
+
 
 		return $post[$name];
 	}
@@ -151,8 +159,11 @@ class Request
         if(!$name)
             return $server;
 
-        if(!isset($server[$name]))
+        if(!isset($server[$name]) && !isset($_SERVER[$name]))
             return NULL;
+
+        if (isset($_SERVER[$name]))
+        	return $_SERVER[$name];
 
         return $server[$name];
     }
@@ -166,9 +177,9 @@ class Request
 	{
 		$method = $_SERVER['REQUEST_METHOD'];
 
-		if ($value) {
+		if ($value)
 			return $method == $value;
-		}
+
 
 		return $method;
 	}
@@ -219,9 +230,6 @@ class Request
     {
         $method = $this->getMethod();
 
-        if(!array_search(FALSE, $this->$method()))
-            return TRUE;
-        else
-            return FALSE;
+        return array_search(false, $this->$method(), true) === false ? true : false;
     }
 }
