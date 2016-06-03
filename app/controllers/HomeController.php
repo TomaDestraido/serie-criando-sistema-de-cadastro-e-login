@@ -24,7 +24,8 @@ class HomeController extends \HXPHP\System\Controller
 	public function bloqueadaAction()
 	{
 		$this->auth->roleCheck(array(
-			'administrator'
+			'administrator',
+			'user'
 		));
 	}
 }
