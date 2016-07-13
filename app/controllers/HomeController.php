@@ -18,8 +18,7 @@ class HomeController extends \HXPHP\System\Controller
 		$this->load(
 			'Helpers\Menu',
 			$this->request,
-			$this->configs,
-			$this->auth->getUserRole()
+			$this->configs
 		);
 
 		$user_id = $this->auth->getUserId();
