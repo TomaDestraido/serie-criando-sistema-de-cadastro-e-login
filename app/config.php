@@ -28,6 +28,12 @@
 		'Home/dashboard' => '%baseURI%/home'
 	));
 
+	$configs->env->development->menu->setConfigs(array(
+		'container' => 'nav',
+		'container_class' => 'navbar navbar-default',
+		'menu_class' => 'nav navbar-nav'
+	));
+
 	$configs->env->add('production');
 
 	$configs->env->production->baseURI = '/';
