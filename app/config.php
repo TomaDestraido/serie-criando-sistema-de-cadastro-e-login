@@ -17,11 +17,8 @@
 
 	$configs->env->development->menu->setMenus(array(
 		'Home/dashboard' => '%baseURI%/home',
-		'Link/user' => 'http://www.google.com',
-		'Submenus/cog' => array(
-			'Painel/dashboard' => '%baseURI%/home',
-			'Atualizações/hand-o-up' => '%baseURI%/atualizacoes'
-		)
+		'Projetos/briefcase' => '%baseURI%/projetos',
+		'Editar perfil/cog' => '%baseURI%/perfil/editar',
 	), 'user');
 
 	$configs->env->development->menu->setMenus(array(
