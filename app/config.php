@@ -15,6 +15,22 @@
 
 	$configs->env->development->auth->setURLs('/sistema/home/', '/sistema/login/');
 
+	$configs->env->development->menu->setMenus(array(
+		'Home/dashboard' => '%baseURI%/home',
+		'Projetos/briefcase' => '%baseURI%/projetos',
+		'Editar perfil/cog' => '%baseURI%/perfil/editar',
+	), 'user');
+
+	$configs->env->development->menu->setMenus(array(
+		'Home/dashboard' => '%baseURI%/home'
+	));
+
+	$configs->env->development->menu->setConfigs(array(
+		'container' => 'nav',
+		'container_class' => 'navbar navbar-default',
+		'menu_class' => 'nav navbar-nav'
+	));
+
 	$configs->env->add('production');
 
 	$configs->env->production->baseURI = '/';
