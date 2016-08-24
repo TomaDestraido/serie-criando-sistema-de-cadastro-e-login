@@ -34,6 +34,8 @@ class PerfilController extends \HXPHP\System\Controller
 
 	public function atualizarAction()
 	{
+		$this->view->setFile('editar');
+
 		$user_id = $this->auth->getUserId();
 
 		$this->request->setCustomFilters(array(
@@ -53,6 +55,8 @@ class PerfilController extends \HXPHP\System\Controller
 				));
 			}
 			else {
+				$this->view->setVar('user', $atualizarUsuario->user);
+				
 				$this->load('Helpers\Alert', array(
 					'success',
 					'Uhuul! Perfil atualizado com sucesso!'
