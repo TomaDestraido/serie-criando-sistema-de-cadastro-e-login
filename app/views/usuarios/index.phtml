@@ -18,7 +18,7 @@
 							<td><?php echo $user->email; ?></td>
 							<td><?php echo $user->username; ?></td>
 							<td>
-								<?php if ($user->status === 'Inativo') : ?>
+								<?php if ($user->status === 0) : ?>
 									<a href="<?php echo BASE . 'usuarios/desbloquear/' . $user->id; ?>" class="btn btn-xs btn-success">
 										<i class="fa fa-unlock"></i> Desbloquear
 									</a>	
