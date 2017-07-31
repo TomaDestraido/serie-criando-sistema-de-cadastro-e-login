@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d571acf715fa5368e8d8f3bfbff50694",
     "content-hash": "2f543fcc17a8d4b6f117421a011ae13e",
     "packages": [
         {
@@ -57,12 +56,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jpfuentes2/php-activerecord.git",
-                "reference": "7220379c2f1ac31cd0633a781879a4bf584bbb31"
+                "reference": "d9a4130adbef8f5446cbdcc96b42b8204e3da5b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jpfuentes2/php-activerecord/zipball/7220379c2f1ac31cd0633a781879a4bf584bbb31",
-                "reference": "7220379c2f1ac31cd0633a781879a4bf584bbb31",
+                "url": "https://api.github.com/repos/jpfuentes2/php-activerecord/zipball/d9a4130adbef8f5446cbdcc96b42b8204e3da5b4",
+                "reference": "d9a4130adbef8f5446cbdcc96b42b8204e3da5b4",
                 "shasum": ""
             },
             "require": {
@@ -89,7 +88,7 @@
                 "activerecord",
                 "orm"
             ],
-            "time": "2016-08-13 00:25:55"
+            "time": "2017-06-19 20:32:00"
         },
         {
             "name": "verot/class.upload.php",
@@ -97,12 +96,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/verot/class.upload.php.git",
-                "reference": "79125bcdcd17fda24ce7ff681f2066ae42097ec7"
+                "reference": "d5472133c98feae23b3f8dce40f1b1711ca6bcc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verot/class.upload.php/zipball/79125bcdcd17fda24ce7ff681f2066ae42097ec7",
-                "reference": "79125bcdcd17fda24ce7ff681f2066ae42097ec7",
+                "url": "https://api.github.com/repos/verot/class.upload.php/zipball/d5472133c98feae23b3f8dce40f1b1711ca6bcc4",
+                "reference": "d5472133c98feae23b3f8dce40f1b1711ca6bcc4",
                 "shasum": ""
             },
             "require": {
@@ -130,7 +129,7 @@
                 "gd",
                 "upload"
             ],
-            "time": "2016-07-16 19:59:53"
+            "time": "2017-07-23 01:29:24"
         }
     ],
     "packages-dev": [],

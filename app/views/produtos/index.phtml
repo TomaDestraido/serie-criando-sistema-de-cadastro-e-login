@@ -1,0 +1,244 @@
+<!doctype html>
+<html class="no-js">
+
+    <head>
+        <meta charset="utf-8"/>
+        <title>FOLDER TEMPLATE</title>
+
+        <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" media="all" href="<?php echo CSS; ?>products/css/style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->		
+        <!--Header-->
+        <link rel="stylesheet" href="<?php echo CSS; ?>inicial/css/font-awesome.min.css">
+        <link rel="stylesheet" href="<?php echo CSS; ?>inicial/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo CSS; ?>inicial/css/style.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=BenchNine:300,400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="<?php echo JS; ?>inicial/js/modernizr.js"></script>
+        <!-- JS -->
+        <script src="<?php echo JS; ?>products/js/jquery-1.7.1.min.js"></script>
+        <script src="<?php echo JS; ?>products/js/custom.js"></script>
+        <script src="<?php echo JS; ?>products/js/tabs.js"></script>
+        <script src="<?php echo JS; ?>products/js/css3-mediaqueries.js"></script>
+        <script src="<?php echo JS; ?>products/js/jquery.columnizer.min.js"></script>
+
+        <!-- Isotope -->
+        <script src="<?php echo JS; ?>products/js/jquery.isotope.min.js"></script>
+
+        <!-- Lof slider -->
+        <script src="<?php echo JS; ?>products/js/jquery.easing.js"></script>
+        <script src="<?php echo JS; ?>products/js/lof-slider.js"></script>
+        <link rel="stylesheet" href="<?php echo CSS; ?>products/css/lof-slider.css" media="all"  /> 
+        <!-- ENDS slider -->
+
+        <!-- Tweet -->
+        <link rel="stylesheet" href="<?php echo CSS; ?>products/css/jquery.tweet.css" media="all"  /> 
+        <script src="<?php echo JS; ?>products/js/jquery.tweet.js" ></script> 
+        <!-- ENDS Tweet -->
+
+        <!-- superfish -->
+        <link rel="stylesheet" media="screen" href="<?php echo CSS; ?>products/css/superfish.css" /> 
+        <script  src="<?php echo JS; ?>products/js/hoverIntent.js"></script>
+        <script  src="<?php echo JS; ?>products/js/superfish.js"></script>
+        <script  src="<?php echo JS; ?>products/js/supersubs.js"></script>
+        <!-- ENDS superfish -->
+
+        <!-- prettyPhoto -->
+        <script  src="<?php echo JS; ?>products/js/jquery.prettyPhoto.js"></script>
+        <link rel="stylesheet" href="<?php echo CSS; ?>products/css/prettyPhoto.css"  media="screen" />
+        <!-- ENDS prettyPhoto -->
+
+        <!-- poshytip -->
+        <link rel="stylesheet" href="<?php echo CSS; ?>products/css/tip-twitter.css"  />
+        <link rel="stylesheet" href="<?php echo CSS; ?>products/css/tip-yellowsimple.css"  />
+        <script  src="<?php echo JS; ?>products/js/jquery.poshytip.min.js"></script>
+        <!-- ENDS poshytip -->
+
+        <!-- JCarousel -->
+        <script type="text/javascript" src="<?php echo JS; ?>products/js/jquery.jcarousel.min.js"></script>
+        <link rel="stylesheet" media="screen" href="<?php echo CSS; ?>products/css/carousel.css" /> 
+        <!-- ENDS JCarousel -->
+
+        <!-- GOOGLE FONTS -->
+        <link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
+
+        <!-- modernizr -->
+        <script src="<?php echo JS; ?>products/js/modernizr.js"></script>
+
+        <!-- SKIN -->
+        <link rel="stylesheet" media="all" href="<?php echo CSS; ?>products/css/skin.css"/>
+
+        <!-- Less framework -->
+        <link rel="stylesheet" media="all" href="<?php echo CSS; ?>products/css/lessframework.css"/>
+
+        <!-- flexslider -->
+        <link rel="stylesheet" href="<?php echo CSS; ?>products/css/flexslider.css" >
+        <script src="<?php echo JS; ?>products/js/jquery.flexslider.js"></script>
+
+    </head>
+
+
+    <body class="home">
+
+        <!-- HEADER -->
+        <header class="top-header" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-5 header-logo">
+                        <br>
+                        <a href="index.html"><img src="<?php echo IMG; ?>inicial/img/logon.png" 
+                                                  style="width: 150px; 
+                                                  height: 90px;  
+                                                  position: absolute; 
+                                                  margin-top: -20px;" alt="" class="img-responsive logo"></a>
+                    </div>
+
+                    <div class="col-md-7">
+                        <nav class="navbar navbar-default">
+                            <div class="container-fluid nav-bar">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                        <span class="sr-only">IPTV navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"style="width: 900px;">
+
+                                    <ul style="margin-right: 150px;" class="nav navbar-nav navbar-right">
+                                        <li><a class="menu" href="<?php echo BASE; ?>" >Início</a></li>
+                                        <li><a class="menu active" href="<?php echo BASE; ?>produtos">Produtos</a></li>
+                                        <li><a class="menu" href="#service">Sobre nós</a></li>
+                                        <li><a class="menu" target="_blank" href="https://ws.nperf.com/partner/frame?l=3ae59686-4b09-4589-8fe6-c78922620a04">Teste sua Conexão</a></li>
+                                        <li><a class="menu" href="<?php echo BASE; ?>#contact">Contate-nos</a></li>
+                                        <li><a class="menu" href="<?php echo BASE; ?>login">Logar</a></li>
+                                    </ul>
+                                </div><!-- /navbar-collapse -->
+                            </div><!-- / .container-fluid -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header> <!-- end of header area -->
+        <!-- ENDS HEADER -->
+
+        <!-- MAIN -->
+        <div id="main">
+            <div class="wrapper cf">
+
+                <!-- featured -->
+                <div class="home-featured">
+                    <ul id="filter-buttons"  style="font-size: 25px;">
+                        <li><a href="#" data-filter="*" class="selected">Mostrar Todos</a></li>
+                        <li><a href="#" data-filter=".print">Paineis IPTV</a></li>
+                        <li><a href="#" data-filter=".listas">Listas IPTV</a></li>
+                        <li><a href="#" data-filter=".design">Celulares</a></li>
+                        <li><a href="#" data-filter=".photo">Outros</a></li>
+                    </ul>
+
+                    <!-- Filter container -->
+                    <div id="filter-container" class="cf">
+                        <figure class="listas">
+                            <a href="project.html" class="thumb"><img src="<?php echo IMG; ?>products/img/01.jpg" alt="alt" /></a>
+                            <figcaption>
+                                <a href="project.html"><h3 class="heading">VIP Light</h3></a>
+                                <p style="font-size: 20px;">Este pacote possui canais de Resolução SD (Standard Definition), 
+                                    são *** canais, para que você possa usufruir. Atenção é importante ressaltar que este pacote
+                                    NÃO são Incluídos:Canais HD, Adultos e On-Demand.</p> </figcaption>
+                        </figure>
+
+                        <figure class="listas">
+                            <a href="project.html" class="thumb"><img src="<?php echo IMG; ?>products/img/02.jpg" alt="alt" /></a>
+                            <figcaption>
+                                <a href="project.html"><h3 class="heading">VIP Master</h3></a>
+                                <p style="font-size: 20px;"> Este pacote possui canais de Resolução SD (Standard Definition) e também
+                                    de Resolução HD (High Definition), são *** canais e mais *** canais exclusivos de filmes On-Demand,
+                                    para que você possa usufruir.</p></figcaption>
+                        </figure>
+
+
+                        <figure class="listas">
+                            <a href="project.html" class="thumb"><img src="<?php echo IMG; ?>products/img/03.jpg" alt="alt" /></a>
+                            <figcaption>
+                                <a href="project.html" ><h3 class="heading">VIP Premium </h3></a>
+                                <p style="font-size: 20px;"> Este pacote possui canais de Resolução SD (Standard Definition) e também de
+                                    Resolução HD (High Definition), são *** canais, *** canais adultos (+18) e mais *** canais exclusivos
+                                    de filmes On-Demand, para que você possa usufruir.</p></figcaption>
+                        </figure>
+
+
+                        <figure class="photo">
+                            <a href="project.html" class="thumb"><img src="<?php echo IMG; ?>products/img/04.jpg" alt="alt" /></a>
+                            <figcaption>
+                                <a href="project.html" ><h3 class="heading">Pellentesque habitant morbi</h3></a>
+                                Tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. </figcaption>
+                        </figure>
+
+
+                        <figure class="web photo">
+                            <a href="project.html" class="thumb"><img src="<?php echo IMG; ?>products/img/05.jpg" alt="alt" /></a>
+                            <figcaption>
+                                <a href="project.html" ><h3 class="heading">Pellentesque habitant morbi</h3></a>
+                                Tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. </figcaption>
+                        </figure>
+
+
+                        <figure class="web print">
+                            <a href="project.html" class="thumb"><img src="<?php echo IMG; ?>products/img/06.jpg" alt="alt" /></a>
+                            <figcaption>
+                                <a href="project.html" ><h3 class="heading">Pellentesque habitant morbi</h3></a>
+                                Tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. </figcaption>
+                        </figure>
+
+
+                        <figure class="photo">
+                            <a href="project.html" class="thumb"><img src="<?php echo IMG; ?>products/img/04.jpg" alt="alt" /></a>
+                            <figcaption>
+                                <a href="project.html" ><h3 class="heading">Pellentesque habitant morbi</h3></a>
+                                Tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. </figcaption>
+                        </figure>
+
+
+                        <figure class="web photo">
+                            <a href="project.html" class="thumb"><img src="<?php echo IMG; ?>products/img/05.jpg" alt="alt" /></a>
+                            <figcaption>
+                                <a href="project.html" ><h3 class="heading">Pellentesque habitant morbi</h3></a>
+                                Tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. </figcaption>
+                        </figure>
+
+
+                        <figure class="web print">
+                            <a href="project.html" class="thumb"><img src="<?php echo IMG; ?>products/img/01.jpg" alt="alt" /></a>
+                            <figcaption>
+                                <a href="project.html" ><h3 class="heading">Pellentesque habitant morbi</h3></a>
+                                Tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. </figcaption>
+                        </figure>
+
+                    </div><!-- ENDS Filter container -->
+
+                </div>
+                <!-- ENDS featured -->
+
+
+
+
+            </div><!-- ENDS WRAPPER -->
+        </div>
+        <!-- ENDS MAIN -->
+
+
+        <!-- FOOTER -->
+
+    </body>
+
+
+
+</html>
