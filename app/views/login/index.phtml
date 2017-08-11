@@ -1,22 +1,125 @@
-                <div class="panel-body">
-                    <?php echo (isset($this->alert) ? $this->alert : ''); ?>
-                    <form action="<?php echo BASE; ?>login/logar/" class="form-horizontal" method="post">
-                      <div class="form-group">
-                        <label for="username" class="col-sm-3 control-label">Usuário:</label>
-                        <div class="col-sm-8">
-                          <input type="text" name="username" class="form-control" id="username" value="<?php echo $this->request->post('username') ?>" placeholder="hxtutors">
+<!doctype html>
+<html class="no-js">
+
+    <head>
+        <meta charset="utf-8"/>
+        <title>AlphaIPTV</title>
+
+        <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" media="all" href="<?php echo CSS; ?>products/css/style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->		
+        <!--Header-->
+        <link rel="stylesheet" href="<?php echo CSS; ?>inicial/css/font-awesome.min.css">
+        <link rel="stylesheet" href="<?php echo CSS; ?>inicial/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo CSS; ?>inicial/css/style.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=BenchNine:300,400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="<?php echo CSS; ?>login/style.css">
+        <link rel="stylesheet" href="<?php echo CSS; ?>barras.css">
+
+        <!-- ENDS slider -->
+
+    </head>
+
+
+    <body class="home" background="<?php echo IMG; ?>login/login.jpg"style="background-size: 100%;">
+
+        <!-- HEADER -->
+        <header class="top-header" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-5 header-logo">
+                        <br>
+                        <a href="index.html"><img src="<?php echo IMG; ?>inicial/img/logon.png" 
+                                                  style="width: 150px; 
+                                                  height: 90px;  
+                                                  position: absolute; 
+                                                  margin-top: -20px;" alt="" class="img-responsive logo"></a>
+                    </div>
+
+                    <div class="col-md-7">
+                        <nav class="navbar navbar-default">
+                            <div class="container-fluid nav-bar">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                        <span class="sr-only">IPTV navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"style="width: 900px;">
+
+                                    <ul style="margin-right: 150px;" class="nav navbar-nav navbar-right">
+                                        <li><a class="menu" href="<?php echo BASE; ?>" >Início</a></li>
+                                        <li><a class="menu " href="<?php echo BASE; ?>produtos">Produtos</a></li>
+                                        <li><a class="menu" href="#service">Sobre nós</a></li>
+                                        <li><a class="menu" target="_blank" href="https://ws.nperf.com/partner/frame?l=3ae59686-4b09-4589-8fe6-c78922620a04">Teste sua Conexão</a></li>
+                                        <li><a class="menu" href="<?php echo BASE; ?>#contact">Contate-nos</a></li>
+                                        <li><a class="menu active" href="<?php echo BASE; ?>login">Entrar</a></li>
+                                    </ul>
+                                </div><!-- /navbar-collapse -->
+                            </div><!-- / .container-fluid -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        </br>
+        </br>
+               </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+	<div class="containerrr" >
+            <h1 style="font-family: sans-serif; font-size: 30px; color: white;">		<?php
+$hr = date(" H ");
+if($hr >= 12 && $hr<18) {
+$resp = "Boa tarde!";}
+else if ($hr >= 0 && $hr <12 ){
+$resp = "Bom dia!";}
+else {
+$resp = "Boa noite!";}
+echo "$resp";
+?></h1>     
+            <div class="panel-body">
+                <h3 style=" font-size: 20px; margin-top: -25px;"> <?php echo (isset($this->alert) ? $this->alert : ''); ?> </h3>
+                <form class="formmm" action="<?php echo BASE; ?>login/logar/"  method="post">
+                      <div >
+                        <div >
+                          <input type="text" name="username"  id="username" value="<?php echo $this->request->post('username') ?>" placeholder="Nome de Usuário">
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label for="password" class="col-sm-3 control-label">Senha:</label>
-                        <div class="col-sm-8">
-                          <input type="password" name="password" class="form-control" id="password" placeholder="Sua senha">
+                      <div >
+                        <div >
+                          <input type="password" name="password"  id="password" placeholder="Sua senha">
                         </div>
                       </div>
-                      <div class="form-group">
-                        <div class="col-sm-offset-3 col-sm-10">
-                          <button type="submit" class="btn btn-success">Entrar</button>
+                      <div >
+                        <div >
+                          <button type="submit">Entrar</button>
                         </div>
                       </div>
                     </form>
                 </div>
+	</div>
+        </br>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+
+    </body>
+
+
+
+</html>
