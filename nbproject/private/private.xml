@@ -3,9 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/sistema/public/css/inicial/css/bootstrap.min.css</file>
-            <file>file:/C:/xampp/htdocs/sistema/public/css/inicial/css/style.css</file>
+            <file>file:/C:/xampp/htdocs/sistema/app/views/login/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/sistema/templates/Modules/Messages/auth.json</file>
+            <file>file:/C:/xampp/htdocs/sistema/public/css/login/style.css</file>
+            <file>file:/C:/xampp/htdocs/sistema/public/css/barras.css</file>
+            <file>file:/C:/xampp/htdocs/sistema/public/img/login/login.jpg</file>
             <file>file:/C:/xampp/htdocs/sistema/app/views/index/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/sistema/templates/Helpers/Alert/alert.html</file>
+            <file>file:/C:/xampp/htdocs/sistema/public/css/bootstrap.min.css</file>
+            <file>file:/C:/xampp/htdocs/sistema/templates/Helpers/Alert/alert-list.html</file>
         </group>
     </open-files>
 </project-private>
